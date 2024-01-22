@@ -1,0 +1,869 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/logo/arteverywhere.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+    
+    
+      
+        <title>Devlog - Art Everywhere Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#step-1-environment-setup" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Art Everywhere Docs" class="md-header__button md-logo" aria-label="Art Everywhere Docs" data-md-component="logo">
+      
+  <img src="../../assets/images/logo/arteverywhere.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Art Everywhere Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Devlog
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Art Everywhere Docs" class="md-nav__button md-logo" aria-label="Art Everywhere Docs" data-md-component="logo">
+      
+  <img src="../../assets/images/logo/arteverywhere.png" alt="logo">
+
+    </a>
+    Art Everywhere Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dump
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Dump
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Devlog
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Devlog
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Environment Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Environment Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-choose-a-development-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Choose a Development Framework
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-ide-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 IDE Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-local-testing-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Local Testing Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-initialize-smart-contract-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Initialize Smart Contract Project
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-wallet-management-and-minting-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Wallet Management and Minting Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Wallet Management and Minting Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-metamask-authentication-with-backend-minting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 1: Metamask Authentication with Backend Minting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-backend-managed-crypto-wallets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 2: Backend-Managed Crypto Wallets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Option 2: Backend-Managed Crypto Wallets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommendation:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arteverywherenft-smart-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      ArtEverywhereNFT Smart Contract
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ArtEverywhereNFT Smart Contract">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minting-artworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minting Artworks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gas-wallet-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gas Wallet Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events-and-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Events and Notifications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arteverywherenfttestjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      ArtEverywhereNFT.test.js
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Environment Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Environment Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-choose-a-development-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Choose a Development Framework
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-ide-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 IDE Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-local-testing-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Local Testing Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-initialize-smart-contract-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Initialize Smart Contract Project
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-wallet-management-and-minting-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Wallet Management and Minting Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Wallet Management and Minting Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-metamask-authentication-with-backend-minting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 1: Metamask Authentication with Backend Minting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-backend-managed-crypto-wallets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 2: Backend-Managed Crypto Wallets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Option 2: Backend-Managed Crypto Wallets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommendation:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arteverywherenft-smart-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      ArtEverywhereNFT Smart Contract
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ArtEverywhereNFT Smart Contract">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minting-artworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minting Artworks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gas-wallet-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gas Wallet Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events-and-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Events and Notifications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arteverywherenfttestjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      ArtEverywhereNFT.test.js
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Devlog</h1>
+
+<h2 id="step-1-environment-setup">Step 1: Environment Setup</h2>
+<h3 id="11-choose-a-development-framework">1.1 Choose a Development Framework</h3>
+<ul>
+<li><strong>Framework Used:</strong> Truffle</li>
+<li><strong>Version:</strong> [Specify the version, e.g., Truffle v5.4.0]</li>
+</ul>
+<h3 id="12-ide-integration">1.2 IDE Integration</h3>
+<ul>
+<li><strong>IDE Used:</strong> Visual Studio Code</li>
+<li><strong>Extension Used:</strong> Truffle</li>
+</ul>
+<h3 id="13-local-testing-setup">1.3 Local Testing Setup</h3>
+<ul>
+<li><strong>Blockchain Test Environment:</strong> Ganache</li>
+<li><strong>Version:</strong> 2.7.1</li>
+</ul>
+<h3 id="14-initialize-smart-contract-project">1.4 Initialize Smart Contract Project</h3>
+<ul>
+<li><strong>Project Initialization:</strong> Truffle init</li>
+<li><strong>Directory Structure:</strong></li>
+</ul>
+<pre><code>.
+├── contracts
+├── migrations
+├── package.json
+├── package-lock.json
+├── test
+└── truffle-config.js
+</code></pre>
+<hr />
+<h2 id="user-wallet-management-and-minting-options">User Wallet Management and Minting Options</h2>
+<p>In Art Everywhere, users interact with the platform through their Ethereum wallets. Here's an exploration of two potential user scenarios:</p>
+<h3 id="option-1-metamask-authentication-with-backend-minting">Option 1: Metamask Authentication with Backend Minting</h3>
+<ul>
+<li>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Users leverage the security and familiarity of MetaMask.</li>
+<li>Simplifies backend integration, leveraging MetaMask's web3 provider.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Users need a MetaMask wallet and some ETH for gas fees.</li>
+<li>Slightly more complex initial setup for users.</li>
+</ul>
+</li>
+</ul>
+<h3 id="option-2-backend-managed-crypto-wallets">Option 2: Backend-Managed Crypto Wallets</h3>
+<ul>
+<li>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Complete control and management by the backend.</li>
+<li>Streamlines onboarding for less experienced users.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Development complexity is significantly higher.</li>
+<li>Potential security and responsibility concerns.</li>
+</ul>
+</li>
+</ul>
+<h4 id="recommendation">Recommendation:</h4>
+<p>Considering simplicity and development efficiency, Option 1 is recommended. It balances user familiarity and backend management efficiency.</p>
+<p>For more details and potential future explorations, visit the <a href="link-to-repository">Art Everywhere Documentation Repository</a>.</p>
+<hr />
+<h2 id="arteverywherenft-smart-contract">ArtEverywhereNFT Smart Contract</h2>
+<p>The Art Everywhere NFT smart contract, deployed on the Ethereum blockchain, serves as the backbone of your decentralized art marketplace. Here's an overview of its features:</p>
+<h3 id="minting-artworks">Minting Artworks</h3>
+<ul>
+<li>Users with the <code>MINTER_ROLE</code> can mint new artworks on the platform.</li>
+<li>Each minting transaction ensures the uniqueness of the generated NFT.</li>
+</ul>
+<h3 id="gas-wallet-integration">Gas Wallet Integration</h3>
+<ul>
+<li>The contract includes functionality to fund the backend's gas wallet.</li>
+<li>The <code>fundGasWallet</code> function allows the owner to transfer ETH to the gas wallet for backend transactions.</li>
+</ul>
+<h3 id="events-and-notifications">Events and Notifications</h3>
+<ul>
+<li>Events are emitted to notify external systems when an artwork is successfully minted.</li>
+<li>The <code>ArtworkMinted</code> event includes relevant information, such as the artist's address and the NFT's token ID.</li>
+</ul>
+<h3 id="access-control">Access Control</h3>
+<ul>
+<li>Access to minting functionality is controlled by the <code>MINTER_ROLE</code>.</li>
+<li>The <code>onlyMinter</code> modifier ensures that only authorized users can execute minting functions.</li>
+</ul>
+<h3 id="initialization">Initialization</h3>
+<ul>
+<li>The contract is initialized with essential parameters, including the gas wallet address.</li>
+<li>Default admin and minting roles are granted during deployment.</li>
+</ul>
+<p>For detailed code snippets and usage instructions, refer to the <a href="link-to-repository">Art Everywhere NFT Smart Contract Repository</a>.</p>
+<h3 id="update-summary">Update Summary</h3>
+<ul>
+<li>Resolved issues related to ERC721 and OpenZeppelin version compatibility.</li>
+<li>Updated the contract to comply with the latest OpenZeppelin standards.</li>
+<li>Implemented access control for minting functionality using the <code>MINTER_ROLE</code>.</li>
+<li>Added a <code>fundGasWallet</code> function to facilitate ETH transfers for backend transactions.</li>
+</ul>
+<hr />
+<h2 id="arteverywherenfttestjs">ArtEverywhereNFT.test.js</h2>
+<p>The ArtEverywhereNFT.test.js file contains the test cases for validating the functionality of the ArtEverywhereNFT smart contract. Below is a summary of the updates and discussions:</p>
+<ul>
+<li>Created a test case to ensure the successful deployment of the ArtEverywhereNFT contract.</li>
+<li>Ongoing discussions and debugging related to deployment issues and test execution.</li>
+<li>Consideration of different user scenarios and minting options for the ArtEverywhere platform.</li>
+</ul>
+<p>For more details and potential future explorations, visit the <a href="link-to-repository">Art Everywhere Documentation Repository</a>.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      
+    
+  </body>
+</html>
