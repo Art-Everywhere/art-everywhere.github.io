@@ -4,3 +4,8 @@ theme:
   name: material
   logo: assets/images/logo/arteverywhere.png
   favicon: assets/images/logo/arteverywhere.png
+
+nav:
+  - Home: index.md
+  - Dump:
+      - Devlog: contract-development/Log.md
